@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/second_hand_clothes.jpg')  no-repeat center center fixed;
+    background: url('/media/second_hand_clothes1.jpg')  no-repeat center center fixed;
     background-size: cover;
     opacity:0.9;
     height: calc(100vh - 164px);
@@ -29,13 +29,13 @@ body {
 }
 
 .shop-now-button {
-    background: red;
+    background: black;
     color: white;
     min-width: 260px;
 }
 
 .btn-black {
-    background: pink;
+    background: black;
     color: white;
 }
 
