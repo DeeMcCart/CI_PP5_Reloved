@@ -101,6 +101,11 @@ a.category-badge > span.badge:hover {
     cursor: pointer;
 }
 
+.image-basket {
+    max-width: 30%;
+    max-height: auto;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
