@@ -2,7 +2,7 @@ from django.db import models
 from products.models import Product
 from profiles.models import UserProfile
 from django.conf import settings
-from django.db.models import Sum
+from django.db.models import Sum, Max
 
 """ from django_countries.fields import CountryField """
 
@@ -28,13 +28,18 @@ class Order(models.Model):
 
     def _generate_order_number(self):
         """
-        Generate a next number for the order based on incrementing the settings CURRENT_ORDER_NUMBER
+        Generate a next number for the order based on determining the last order number written to file, and using it
+        Else, if no orders on table, then use the  FIRST_ORDER_NUMBER from settings
         """
-        current_order_number = settings.CURRENT_ORDER_NUMBER
-        print(f'Current order number ', current_order_number)
-        next_order_number = current_order_number + 1
-        print(f'Next order number ', next_order_number)
-        settings.CURRENT_ORDER_NUMBER = next_order_number
+        
+        max_order_number = Order.objects.all().order_by('order_number').last().order_number
+        
+        if max_order_number:
+            next_order_number = int(max_order_number) + 1
+        else:
+            next_order_number = settings.FIRST_ORDER_NUMBER
+            settings.FIRST_ORDER_NUMBER = next_order_number
+        
         return str(next_order_number)
 
     def update_total(self):
