@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
+import os, environ
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -118,7 +118,7 @@ WSGI_APPLICATION = 'reloved.wsgi.application'
 
 
 
-if DATABASE_URL in os.environ:
+if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(
             'postgres://mxlqusgx:p8hpNjeqVVjnCq4w93DzXpqhULsdz3iN@horton.db.elephantsql.com/mxlqusgx')
