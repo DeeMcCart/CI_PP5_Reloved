@@ -27,8 +27,9 @@ SECRET_KEY = 'django-insecure-=j&7ev@nx(fnnj+-554#vbwsl9%)u2)1a=+(rvhl@w=owt7f6l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-deemccart-cipp5reloved-bjiwxy0fkjn.ws-eu107.gitpod.io', 'localhost'
-'https://reloved-6745667db3c5.herokuapp.com/', 'https://reloved-6745667db3c5.herokuapp.com/']
+ALLOWED_HOSTS = ['8000-deemccart-cipp5reloved-bjiwxy0fkjn.ws-eu107.gitpod.io', 'localhost',
+'https://reloved-6745667db3c5.herokuapp.com/',
+'reloved-6745667db3c5.herokuapp.com',]
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
